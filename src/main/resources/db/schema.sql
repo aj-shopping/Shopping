@@ -41,6 +41,7 @@ create table if not exists products(
 	key_word varchar(1000) not null,
 	price int not null,
 	counts int not null,
+    url varchar(1000) not null,
 	type int not null,
 	primary key(id),
 	unique(name)

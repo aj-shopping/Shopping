@@ -18,6 +18,9 @@ public class EvaluationDaoImplement implements EvaluationDao {
     @Resource
     private SessionFactory sessionFactory;
 
+    /*
+        获取用户评价
+     */
     @Override
     public Evaluation getEvaluation(int userId, int productId, String time) {
         String hql = "from Evaluation where userId=? and productId=? and time=?";

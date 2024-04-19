@@ -18,6 +18,10 @@ public class Product {
     private int counts;
     private int type;
 
+    private String url;
+
+
+
     @Id
     @GenericGenerator(name = "generator", strategy = "increment") //设置主键自增
     @GeneratedValue(generator = "generator")
@@ -83,5 +87,14 @@ public class Product {
 
     public void setType(int type) {
         this.type = type;
+    }
+
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 }

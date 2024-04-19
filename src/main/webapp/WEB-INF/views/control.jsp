@@ -197,7 +197,7 @@
           var html="";
           productArea.innerHTML = '';
           for(var i=0;i<allProduct.length;i++){
-              var imgURL = "${cp}/img/"+allProduct[i].id+".jpg";
+              var imgURL = "${cp}/img/"+allProduct[i].url+".jpg";
               html+='<div class="col-sm-4 col-md-4 pd-5">'+
                       '<div class="boxes">'+
                       '<div class="big bigimg">'+
@@ -292,6 +292,7 @@
           product.price = document.getElementById("productPrice").value;
           product.counts = document.getElementById("productCount").value;
           product.type = document.getElementById("productType").value;
+          product.url = extractFileName(document.getElementById("productImgUpload"));
           var addResult="";
           $.ajax({
               async : false,
@@ -313,10 +314,29 @@
           }
           listAllProduct();
       }
-      
+      function extractFileName(inputElement) {
+            var filePath = inputElement.value;
+
+            // 提取最后一个反斜杠后的文件名
+            var fileName = filePath.split('\\').pop();
+
+            // 如果文件路径中不存在反斜杠，则整个filePath就是文件名
+            if (!fileName) {
+                fileName = filePath;
+            }
+
+            // 去除文件名后面的扩展名
+            var dotIndex = fileName.lastIndexOf('.');
+            if (dotIndex > -1) {
+                fileName = fileName.slice(0, dotIndex);
+            }
+
+            return fileName;
+        }
+
       function fileUpload() {
           var results = "";
-          var name = document.getElementById("productName").value;
+          var name = extractFileName(document.getElementById("productImgUpload"));
           $.ajaxFileUpload({
               url:'${cp}/uploadFile?name='+name,
               secureuri:false ,
@@ -335,6 +355,7 @@
                   if(results == "success") {
                       layer.msg("图片上传成功", {icon: 1});
                       window.location.href = "${cp}/control";
+
                       //var imgPreSee = document.getElementById("imgPreSee");
                       //var imgSrc = '${cp}/img/'+name+'.jpg';
                       //imgPreSee.innerHTML +='<img src="'+imgSrc+')" class="col-sm-12 col-md-12 col-lg-12"/>';
@@ -343,13 +364,22 @@
                       layer.msg("图片上传失败", {icon: 0});
                   }
 
-              },
-              error: function ()
-              {
-                  layer.alert("上传错误");
               }}
           );
       }
+      // function navigateWithInterval(url, duration, interval) {
+      //       setTimeout(function() {
+      //           window.location.href = url;
+      //       }, duration);
+      //
+      //       setInterval(function() {
+      //           window.location.href = url;
+      //       }, interval);
+      //   }
+      //
+      //   // 在1秒内每隔0.5秒执行一次跳转
+
+
   </script>
   </body>
 </html>

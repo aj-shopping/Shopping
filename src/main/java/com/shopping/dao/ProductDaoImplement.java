@@ -47,7 +47,7 @@ public class ProductDaoImplement implements ProductDao {
 
     @Override
     public boolean updateProduct(Product product) {
-        String hql = "update Product set name=?,description=?,keyWord=?,price=?,counts=?,type=? where id=?";
+        String hql = "update Product set name=?,description=?,keyWord=?,price=?,counts=?,type=?,url=? where id=?";
         Query query = sessionFactory.getCurrentSession().createQuery(hql);
         query.setParameter(0,product.getName());
         query.setParameter(1,product.getDescription());
@@ -55,7 +55,8 @@ public class ProductDaoImplement implements ProductDao {
         query.setParameter(3,product.getPrice());
         query.setParameter(4,product.getCounts());
         query.setParameter(5,product.getType());
-        query.setParameter(6,product.getId());
+        query.setParameter(6,product.getUrl());
+        query.setParameter(7,product.getId());
         return query.executeUpdate() > 0;
     }
 

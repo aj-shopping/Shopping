@@ -102,7 +102,7 @@
           mark[7] = 0;
           for(var i=0;i<allProduct.length;i++){
               var html = "";
-			  var imgURL = "${cp}/img/"+allProduct[i].id+".jpg";
+			  var imgURL = "${cp}/img/"+allProduct[i].url+".jpg";
 			  html += '<div class="col-sm-4 col-md-4" >'+
 					  '<div class="boxes pointer" onclick="productDetail('+allProduct[i].id+')">'+
 					  '<div class="big bigimg">'+

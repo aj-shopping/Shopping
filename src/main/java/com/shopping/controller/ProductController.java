@@ -52,7 +52,7 @@ public class ProductController {
 
     @RequestMapping(value = "/addProduct", method = RequestMethod.POST)
     @ResponseBody
-    public Map<String, Object> addProduct(String name,String description,String keyWord,int price,int counts,int type) {
+    public Map<String, Object> addProduct(String name,String description,String keyWord,int price,int counts,int type, String url) {
         System.out.println("添加了商品："+name);
         String result ="fail";
         Product product = new Product();
@@ -62,6 +62,7 @@ public class ProductController {
         product.setPrice(price);
         product.setCounts(counts);
         product.setType(type);
+        product.setUrl(url);
         productService.addProduct(product);
         result = "success";
         Map<String,Object> resultMap = new HashMap<String,Object>();
@@ -130,8 +131,7 @@ public class ProductController {
         try{
             if(productImgUpload != null && !productImgUpload.isEmpty()) {
                 String fileRealPath = request.getSession().getServletContext().getRealPath("/static/img");
-                int id = productService.getProduct(name).getId();
-                String fileName = String.valueOf(id)+".jpg";
+                String fileName = name +".jpg";
                 File fileFolder = new File(fileRealPath);
                 System.out.println("fileRealPath=" + fileRealPath+"/"+fileName);
                 if(!fileFolder.exists()){
