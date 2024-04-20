@@ -8,7 +8,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>购物+</title>
+    <title>Shopping+</title>
     <link href="${cp}/css/bootstrap.min.css" rel="stylesheet">
     <link href="${cp}/css/style.css" rel="stylesheet">
 
@@ -21,78 +21,78 @@
     <![endif]-->
 </head>
 <body>
-<!--导航栏部分-->
+<!-- Navigation Section -->
 <jsp:include page="include/header.jsp"/>
 
-<!-- 中间内容 -->
+<!-- Middle Content -->
 <div class="container-fluid">
-    <h1 class="title center">修改个人信息</h1>
+    <h1 class="title center">Modify Personal Information</h1>
     <br/>
-    <div class="col-sm-offset-2 col-md-offest-2">
-        <!-- 表单输入 -->
-        <div  class="form-horizontal">
+    <div class="col-sm-offset-2 col-md-offset-2">
+        <!-- Form Inputs -->
+        <div class="form-horizontal">
             <div class="form-group">
-                <label for="inputEmail" class="col-sm-2 col-md-2 control-label">用户名</label>
+                <label for="inputEmail" class="col-sm-2 col-md-2 control-label">Username</label>
                 <div class="col-sm-6 col-md-6">
                     <input type="text" class="form-control" id="inputUserName" placeholder="14121047" readonly>
                 </div>
             </div>
             <div class="form-group">
-                <label for="inputEmail" class="col-sm-2 col-md-2 control-label">邮箱</label>
+                <label for="inputEmail" class="col-sm-2 col-md-2 control-label">Email</label>
                 <div class="col-sm-6 col-md-6">
                     <input type="email" class="form-control" id="inputEmail" placeholder="xxxxxx@xx.com" readonly>
                 </div>
             </div>
             <div class="form-group">
-                <label for="inputNickname" class="col-sm-2 col-md-2 control-label">昵称</label>
+                <label for="inputNickname" class="col-sm-2 col-md-2 control-label">Nickname</label>
                 <div class="col-sm-6 col-md-6">
-                    <input type="text" class="form-control" id="inputNickname" placeholder="高帅富" />
+                    <input type="text" class="form-control" id="inputNickname" placeholder="Tall, Rich, Handsome" />
                 </div>
             </div>
             <div class="form-group">
-                <label for="inputPassword" class="col-sm-2 col-md-2 control-label">密码</label>
+                <label for="inputPassword" class="col-sm-2 col-md-2 control-label">Password</label>
                 <div class="col-sm-6 col-md-6">
-                    <input type="password" class="form-control" id="inputPassword" placeholder="禁止输入非法字符" />
+                    <input type="password" class="form-control" id="inputPassword" placeholder="Do not enter illegal characters" />
                 </div>
             </div>
             <div class="form-group">
-                <label for="inputPhoneNumber" class="col-sm-2 col-md-2 control-label">手机号码</label>
+                <label for="inputPhoneNumber" class="col-sm-2 col-md-2 control-label">Phone Number</label>
                 <div class="col-sm-6 col-md-6">
                     <input type="text" class="form-control" id="inputPhoneNumber" placeholder="131xxxxxxxx" />
                 </div>
             </div>
             <div class="form-group">
-                <label for="man" class="col-sm-2 col-md-2 control-label">性别</label>
+                <label for="man" class="col-sm-2 col-md-2 control-label">Gender</label>
                 <div class="col-sm-6 col-md-6">
                     <label class="radio-inline">
-                        <input type="radio" id="man" value="option1"> 男
+                        <input type="radio" id="man" value="option1"> Male
                     </label>
                     <label class="radio-inline">
-                        <input type="radio" id="woman" value="option2"> 女
+                        <input type="radio" id="woman" value="option2"> Female
                     </label>
                 </div>
             </div>
             <div class="form-group">
-                <label for="birthday" class="col-sm-2 col-md-2 control-label">出生日期</label>
+                <label for="birthday" class="col-sm-2 col-md-2 control-label">Date of Birth</label>
                 <div class="col-sm-6 col-md-6">
                     <input type="text" class="form-control" id="birthday" placeholder="18" />
                 </div>
             </div>
             <div class="form-group">
-                <label for="postcodes" class="col-sm-2 col-md-2 control-label">邮政编码</label>
+                <label for="postcodes" class="col-sm-2 col-md-2 control-label">Postal Code</label>
                 <div class="col-sm-6 col-md-6">
                     <input type="text" class="form-control" id="postcodes" placeholder="200444" />
                 </div>
             </div>
             <div class="form-group">
-                <label for="address" class="col-sm-2 col-md-2 control-label">地址</label>
+                <label for="address" class="col-sm-2 col-md-2 control-label">Address</label>
                 <div class="col-sm-6 col-md-6">
                     <input type="text" class="form-control" id="address" placeholder="131xxxxxxxx" />
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-6">
-                    <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="startUpdate()">确认修改</button>
+                    <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="startUpdate()">Confirm Update</button>
                 </div>
             </div>
         </div>
@@ -100,7 +100,7 @@
     </div>
 </div>
 
-<!--尾部-->
+<!-- Footer -->
 <jsp:include page="include/foot.jsp"/>
 <script type="text/javascript">
     initData();
@@ -136,32 +136,32 @@
         if(document.getElementById("woman").checked)
             user.sex = 1;
         if(user.userName == ''){
-            layer.msg('用户名不能为空',{icon:2});
+            layer.msg('Username cannot be empty',{icon:2});
             return;
         }
         else if(user.userName.length >= 12){
-            layer.msg('用户名长度不能超过12个字符',{icon:2});
+            layer.msg('Username cannot exceed 12 characters',{icon:2});
             return;
         }
         if(user.nickName == ''){
-            layer.msg('昵称不能为空',{icon:2});
+            layer.msg('Nickname cannot be empty',{icon:2});
             return;
         }
         else if(user.nickName.length >= 15){
-            layer.msg('用户名长度不能超过15个字符',{icon:2});
+            layer.msg('Nickname cannot exceed 15 characters',{icon:2});
             return;
         }
         else if(user.password == ''){
-            layer.msg('密码不能为空',{icon:2});
+            layer.msg('Password cannot be empty',{icon:2});
             return;
         }
         else if(user.password.length>= 20){
-            layer.msg('密码长度不能超过20个字符',{icon:2});
+            layer.msg('Password cannot exceed 20 characters',{icon:2});
             return;
         }
         var registerResult = null;
         $.ajax({
-            async : false, //设置同步
+            async : false, // Set to synchronous
             type : 'POST',
             url : '${cp}/doUpdate',
             data : user,
@@ -170,16 +170,16 @@
                 registerResult = result.result;
             },
             error : function(result) {
-                layer.alert('查询用户错误');
+                layer.alert('Error querying user');
             }
         });
         if(registerResult == 'success'){
             layer.close(loading);
-            layer.msg('修改成功',{icon:1});
+            layer.msg('Update successful',{icon:1});
             window.location.href="${cp}/main";
         }
         else if(registerResult == 'fail'){
-            layer.msg('服务器异常',{icon:2});
+            layer.msg('Server error',{icon:2});
         }
     }
 
@@ -188,7 +188,7 @@
         var user = {};
         user.id = id;
         $.ajax({
-            async : false, //设置同步
+            async : false, // Set to synchronous
             type : 'POST',
             url : '${cp}/getUserById',
             data : user,
@@ -197,7 +197,7 @@
                 userResult = result.result;
             },
             error : function(result) {
-                layer.alert('查询错误');
+                layer.alert('Query error');
             }
         });
         userResult = JSON.parse(userResult);
@@ -209,7 +209,7 @@
         var user = {};
         user.id = id;
         $.ajax({
-            async : false, //设置同步
+            async : false,
             type : 'POST',
             url : '${cp}/getUserDetailById',
             data : user,
@@ -218,7 +218,7 @@
                 userDetailResult = result.result;
             },
             error : function(result) {
-                layer.alert('查询错误');
+                layer.alert('Query error');
             }
         });
         userDetailResult = JSON.parse(userDetailResult);
