@@ -29,13 +29,13 @@
 			<!-- 控制栏 -->
 			<div class="col-sm-3 col-md-2 sidebar sidebar-1">
 				<ul class="nav nav-sidebar">
-					<li class="list-group-item-diy"><a href="#productArea1">衣服配饰 <span class="sr-only">(current)</span></a></li>
-					<li class="list-group-item-diy"><a href="#productArea2">数码产品</a></li>
-					<li class="list-group-item-diy"><a href="#productArea3">书籍办公</a></li>
-					<li class="list-group-item-diy"><a href="#productArea4">游戏周边</a></li>
-					<li class="list-group-item-diy"><a href="#productArea5">生活用品</a></li>
-					<li class="list-group-item-diy"><a href="#productArea6">化妆用品</a></li>
-					<li class="list-group-item-diy"><a href="#productArea7">运动用品</a></li>
+					<li class="list-group-item-diy"><a href="#productArea1">Clothing & Accessories <span class="sr-only">(current)</span></a></li>
+					<li class="list-group-item-diy"><a href="#productArea2">Digital Products</a></li>
+					<li class="list-group-item-diy"><a href="#productArea3">Books & Office Supplies</a></li>
+					<li class="list-group-item-diy"><a href="#productArea4">Gaming Accessories</a></li>
+					<li class="list-group-item-diy"><a href="#productArea5">Daily Necessities</a></li>
+					<li class="list-group-item-diy"><a href="#productArea6">Cosmetics</a></li>
+					<li class="list-group-item-diy"><a href="#productArea7">Sports Equipment</a></li>
 				</ul>
 			</div>
 			<!-- 控制内容 -->
