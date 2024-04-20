@@ -8,7 +8,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>购物+</title>
+    <title>Shopping+</title>
 	  <link href="${cp}/css/bootstrap.min.css" rel="stylesheet">
 	  <link href="${cp}/css/style.css" rel="stylesheet">
 
@@ -29,8 +29,8 @@
 		<div class="row">
 			<div class="col-sm-10  col-md-10 col-sm-offset-1 col-md-offset-1">
 				<div class="jumbotron">
-					<h1>欢迎来到购物车</h1>
-					<p>您的购物车清单为</p>
+					<h1>Welcome to the shopping cart</h1>
+					<p>Your shopping cart list is:</p>
 				</div>
 			</div>
 			<div class="col-sm-10  col-md-10 col-sm-offset-1 col-md-offset-1">
@@ -40,7 +40,7 @@
 				<hr/>
 				<div class="row">
 					<div class="col-lg-4 col-md-4 col-sm-4"></div>
-					<button type="button" class="btn btn-danger btn-lg col-lg-4 col-md-4 col-sm-4" onclick="confirmPre()">确认购买</button>
+					<button type="button" class="btn btn-danger btn-lg col-lg-4 col-md-4 col-sm-4" onclick="confirmPre()">Confirm your purchase</button>
 				</div>
 			</div>
 		</div>
@@ -56,10 +56,10 @@
 			var allShoppingCars = getShoppingCars();
 			shoppingCarTable.innerHTML = "";
 			var html = '<tr>'+
-							'<th>是否购买</th>'+
-							'<th>商品名称</th>'+
-							'<th>商品单价</th>'+
-							'<th>商品数量</th>'+
+							'<th>Whether to buy or not</th>'+
+							'<th>The title of the product</th>'+
+							'<th>The unit price of the product</th>'+
+							'<th>Product Quantity</th>'+
 						'</tr>';
 			for(var i=0;i<allShoppingCars.length;i++){
 				var product = getProductById(allShoppingCars[i].productId);
@@ -95,7 +95,7 @@
 					shoppingCarProducts = result.result;
 				},
 				error : function(result) {
-					layer.alert('查询错误');
+					layer.alert('Query error');
 				}
 			});
 			shoppingCarProducts = eval("("+shoppingCarProducts+")");
@@ -116,7 +116,7 @@
 				}
 			}
 			if(buyCounts == 0){
-				layer.msg("未选中商品",{icon:2});
+				layer.msg("The product is not selected",{icon:2});
 			}
 			else{
 				buyConfirm(buyProducts,buyProductsCounts);
@@ -138,7 +138,7 @@
 					productResult = result.result;
 				},
 				error : function(result) {
-					layer.alert('查询错误');
+					layer.alert('Query error');
 				}
 			});
 			productResult = JSON.parse(productResult);
@@ -162,40 +162,40 @@
 			for(var i=0;i<productsId.length;i++){
 				var product = getProductById(productsId[i]);
 				html +=	'<tr>'+
-					'<th>商品'+(i+1)+'名称：</th>'+
+					'<th>commodity'+(i+1)+'name：</th>'+
 					'<td>'+product.name+'</td>'+
 					'</tr>'+
 					'<tr>'+
-					'<th>商品单价：</th>'+
+					'<th>The unit price of the product：</th>'+
 					'<td>'+product.price+'</td>'+
 					'</tr>'+
 					'<tr>'+
-					'<th>购买数量：</th>'+
+					'<th>Quantity purchased：</th>'+
 					'<td>'+productsCounts[i]+'</td>'+
 					'</tr>'+
 					'<tr>';
 				totalPrice+=product.price*productsCounts[i];
 			}
-			html +='<th>总金额：</th>'+
+			html +='<th>The total amount：</th>'+
 					'<td>'+totalPrice+'</td>'+
 					'</tr>'+
 					'<tr>'+
-					'<th>收货地址：</th>'+
+					'<th>Delivery address：</th>'+
 					'<td>'+address+'</td>'+
 					'</tr>'+
 					'<tr>'+
-					'<th>联系电话：</th>'+
+					'<th>Contact number：</th>'+
 					'<td>'+phoneNumber+'</td>'+
 					'</tr>'+
 					'</table>'+
 					'<div class="row">'+
 					'<div class="col-sm-4 col-md-4 col-lg-4"></div>'+
-					'<button class="btn btn-danger col-sm-4 col-md-4 col-lg-4" onclick="addToShoppingRecordsPre(['+productsId+'],['+productsCounts+'])">确认购买</button>'+
+					'<button class="btn btn-danger col-sm-4 col-md-4 col-lg-4" onclick="addToShoppingRecordsPre(['+productsId+'],['+productsCounts+'])">Confirm your purchase</button>'+
 					'</div>'+
 					'</div>';
 			layer.open({
 				type:1,
-				title:'请确认订单信息：',
+				title:'Please confirm your order information：',
 				content:html,
 				area:['650px','350px'],
 			});
@@ -216,7 +216,7 @@
 					address = result.address;
 				},
 				error : function(result) {
-					layer.alert('查询错误');
+					layer.alert('Query error');
 				}
 			});
 			return address;
@@ -237,7 +237,7 @@
 					phoneNumber = result.phoneNumber;
 				},
 				error : function(result) {
-					layer.alert('查询错误');
+					layer.alert('Query error');
 				}
 			});
 			return phoneNumber;
@@ -270,16 +270,16 @@
 					buyResult = result.result;
 				},
 				error : function(result) {
-					layer.alert('购买错误');
+					layer.alert('Purchase error');
 				}
 			});
 			var product = getProductById(productId);
 			if(buyResult == "success") {
                 deleteShoppingCar(productId);
-				layer.msg("商品 "+product.name+" 购买成功",{icon:1});
+				layer.msg("Commodity "+product.name+"The purchase was successful",{icon:1});
 			}
 			else if(buyResult == "unEnough"){
-				layer.alert("商品 "+product.name+" 库存不足，购买失败")
+				layer.alert("Commodity "+product.name+" Insufficient inventory and failed purchase")
 			}
 		}
 
@@ -298,7 +298,7 @@
                     deleteResult = result.result;
                 },
                 error : function(result) {
-                    layer.alert('查询用户错误');
+                    layer.alert('Query user error');
                 }
             });
         }

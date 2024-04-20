@@ -8,7 +8,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>购物+ 搜索结果</title>
+    <title>Shopping+ Search results</title>
 	  <link href="${cp}/css/bootstrap.min.css" rel="stylesheet">
 	  <link href="${cp}/css/style.css" rel="stylesheet">
 
@@ -30,9 +30,9 @@
 			<div class="form-horizontal">
 				<div class="col-md-2 col-sm-2"></div>
 				<div class="form-group form-group-lg col-sm-6 col-md-6">
-					<input type="text" class="form-control" id="newSearchKeyWord" placeholder="疯狂Java讲义" />
+					<input type="text" class="form-control" id="newSearchKeyWord" placeholder="Pure Cotton T-Shirt in White" />
 				</div>
-				<button class="btn btn-primary btn-lg col-sm-2 col-md-2 big-button" onclick="searchPre()">查找商品</button>
+				<button class="btn btn-primary btn-lg col-sm-2 col-md-2 big-button" onclick="searchPre()">Find an item</button>
 			</div>
 		</div>
 	</div>
@@ -78,7 +78,7 @@
 				  searchResult = result.result;
 			  },
 			  error : function() {
-				  layer.alert('查询错误');
+				  layer.alert('Query error');
 			  }
 		  });
 		  searchResult = eval("("+searchResult+")");
@@ -120,7 +120,7 @@
 				  jumpResult = result.result;
 			  },
 			  error : function() {
-				  layer.alert('查询错误');
+				  layer.alert('Query error');
 			  }
 		  });
 
