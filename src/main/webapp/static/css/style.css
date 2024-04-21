@@ -98,7 +98,7 @@ div:hover {
 }
 .boxes {
 	width:280px;
-	height:245px;
+	height:260px;
 	background-color:#f5f5f5;
 	border:none;
 	overflow:hidden;
@@ -132,6 +132,7 @@ div:hover {
 }
 .pd-5 {
 	padding-top: 30px;
+	height: 310px;
 }
 .pointer:hover {
 	cursor: pointer;
@@ -154,7 +155,9 @@ div:hover {
 	padding-bottom: 5px;
 }
 .delete-button {
-	margin-left: 36px;
+	/*margin-left: 36px;*/
+	margin: 0 auto; /* 将按钮水平居中 */
+    display: block; /* 使按钮成为块级元素，以便 margin:auto; 生效 */
 }
 
 .search-padding{

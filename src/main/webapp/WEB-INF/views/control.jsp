@@ -207,6 +207,7 @@
                   '<p class="font-styles center">' + allProduct[i].name + '</p>' +
                   '<p class="pull-right">Price: ' + allProduct[i].price + '</p>' +
                   '<p class="pull-left">Stock: ' + allProduct[i].counts + '</p>' +
+                  '<br/>'+
                   '<div class="row">' +
                   '<button class="btn btn-primary delete-button" type="submit" onclick="deleteProduct(' + allProduct[i].id + ')">Delete Product</button>' +
                   '</div>' +
