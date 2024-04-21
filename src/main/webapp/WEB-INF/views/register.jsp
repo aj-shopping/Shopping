@@ -26,73 +26,73 @@
 
     <!-- 中间内容 -->
     <div class="container-fluid">
-        <h1 class="title center">注册</h1>
+        <h1 class="title center">enroll</h1>
         <br/>
         <div class="col-sm-offset-2 col-md-offest-2">
             <!-- 表单输入 -->
             <div  class="form-horizontal">
                 <div class="form-group">
-                    <label for="inputEmail" class="col-sm-2 col-md-2 control-label">用户名</label>
+                    <label for="inputEmail" class="col-sm-2 col-md-2 control-label">Username</label>
                     <div class="col-sm-6 col-md-6">
-                        <input type="text" class="form-control" id="inputUserName" placeholder="请输入数字"/>
+                        <input type="text" class="form-control" id="inputUserName" placeholder="Please enter the number"/>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="inputEmail" class="col-sm-2 col-md-2 control-label">邮箱</label>
+                    <label for="inputEmail" class="col-sm-2 col-md-2 control-label">mailbox/label>
                     <div class="col-sm-6 col-md-6">
-                        <input type="email" class="form-control" id="inputEmail" placeholder="请输入正确的邮箱格式"/>
+                        <input type="email" class="form-control" id="inputEmail" placeholder="Please enter the correct email address"/>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="inputNickname" class="col-sm-2 col-md-2 control-label">昵称</label>
+                    <label for="inputNickname" class="col-sm-2 col-md-2 control-label">nickname</label>
                     <div class="col-sm-6 col-md-6">
-                        <input type="text" class="form-control" id="inputNickname" placeholder="高帅富" />
+                        <input type="text" class="form-control" id="inputNickname" placeholder="GaoShuaiFu" />
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="inputPassword" class="col-sm-2 col-md-2 control-label">密码</label>
+                    <label for="inputPassword" class="col-sm-2 col-md-2 control-label">password</label>
                     <div class="col-sm-6 col-md-6">
-                        <input type="password" class="form-control" id="inputPassword" placeholder="禁止输入非法字符" />
+                        <input type="password" class="form-control" id="inputPassword" placeholder="It is forbidden to enter illegal characters" />
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="inputPhoneNumber" class="col-sm-2 col-md-2 control-label">手机号码</label>
+                    <label for="inputPhoneNumber" class="col-sm-2 col-md-2 control-label">Mobile phone number</label>
                     <div class="col-sm-6 col-md-6">
-                        <input type="text" class="form-control" id="inputPhoneNumber" placeholder="请输入手机号" />
+                        <input type="text" class="form-control" id="inputPhoneNumber" placeholder="Please enter your mobile phone number" />
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="man" class="col-sm-2 col-md-2 control-label">性别</label>
+                    <label for="man" class="col-sm-2 col-md-2 control-label">gender</label>
                     <div class="col-sm-6 col-md-6">
                         <label class="radio-inline">
-                            <input type="radio" id="man" value="option1"> 男
+                            <input type="radio" id="man" value="option1"> Male
                         </label>
                         <label class="radio-inline">
-                            <input type="radio" id="woman" value="option2"> 女
+                            <input type="radio" id="woman" value="option2"> Female
                         </label>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="birthday" class="col-sm-2 col-md-2 control-label">出生日期</label>
+                    <label for="birthday" class="col-sm-2 col-md-2 control-label">Date of birth</label>
                     <div class="col-sm-6 col-md-6">
-                        <input type="text" class="form-control" id="birthday" placeholder="请输入出生日期" />
+                        <input type="text" class="form-control" id="birthday" placeholder="Please enter your date of birth" />
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="postcodes" class="col-sm-2 col-md-2 control-label">邮政编码</label>
+                    <label for="postcodes" class="col-sm-2 col-md-2 control-label">Zip code</label>
                     <div class="col-sm-6 col-md-6">
-                        <input type="text" class="form-control" id="postcodes" placeholder="请输入邮政编码" />
+                        <input type="text" class="form-control" id="postcodes" placeholder="Please enter your zip code" />
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="address" class="col-sm-2 col-md-2 control-label">地址</label>
+                    <label for="address" class="col-sm-2 col-md-2 control-label">address</label>
                     <div class="col-sm-6 col-md-6">
-                        <input type="text" class="form-control" id="address" placeholder="请输入寄送地址" />
+                        <input type="text" class="form-control" id="address" placeholder="Please enter a shipping address" />
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-6">
-                        <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="startRegister()">注册</button>
+                        <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="startRegister()">enroll</button>
                     </div>
                 </div>
             </div>
@@ -118,27 +118,27 @@
             if(document.getElementById("woman").checked)
                 user.sex = 1;
             if(user.userName == ''){
-                layer.msg('用户名不能为空',{icon:2});
+                layer.msg('The username cannot be empty',{icon:2});
                 return;
             }
             else if(user.userName.length >= 12){
-                layer.msg('用户名长度不能超过12个字符',{icon:2});
+                layer.msg('The username cannot exceed 12 characters in length',{icon:2});
                 return;
             }
             if(user.nickName == ''){
-                layer.msg('昵称不能为空',{icon:2});
+                layer.msg('Nicknames cannot be empty',{icon:2});
                 return;
             }
             else if(user.nickName.length >= 15){
-                layer.msg('用户名长度不能超过15个字符',{icon:2});
+                layer.msg('The username cannot exceed 15 characters in length',{icon:2});
                 return;
             }
             else if(user.password == ''){
-                layer.msg('密码不能为空',{icon:2});
+                layer.msg('The password cannot be empty',{icon:2});
                 return;
             }
             else if(user.password.length>= 20){
-                layer.msg('密码长度不能超过20个字符',{icon:2});
+                layer.msg('The password cannot exceed 20 characters in length',{icon:2});
                 return;
             }
             var registerResult = null;
@@ -152,25 +152,25 @@
                     registerResult = result.result;
                 },
                 error : function(result) {
-                    layer.alert('查询用户错误');
+                    layer.alert('There was an error querying the user');
                 }
             });
             if(registerResult == 'success'){
                 layer.close(loading);
-                layer.msg('注册成功',{icon:1});
+                layer.msg('Registration is successful',{icon:1});
                 window.location.href="${cp}/login";
             }
             else if(registerResult == 'nameExist'){
                 layer.close(loading);
-                layer.msg('这个用户名已经被占用啦！',{icon:2});
+                layer.msg('This username is already taken!',{icon:2});
             }
             else if(registerResult == 'emailExist'){
                 layer.close(loading);
-                layer.msg('这个用户名已经注册啦！',{icon:2});
+                layer.msg('This username is already registered!',{icon:2});
             }
             else if(registerResult == 'fail'){
                 layer.close(loading);
-                layer.msg('服务器异常',{icon:2});
+                layer.msg('The server is abnormal',{icon:2});
             }
         }
     </script>

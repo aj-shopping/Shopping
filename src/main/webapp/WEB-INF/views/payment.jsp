@@ -17,30 +17,30 @@
     <script src="${cp}/js/layer.js" type="text/javascript"></script>
 
 
-    <title>二维码支付</title>
+    <title>QR code payment</title>
 </head>
 <body>
-    <h1>二维码支付</h1>
+    <h1>QR code payment</h1>
 
 
-    <h2>请使用支付宝、微信等扫描以下二维码进行支付：</h2>
+    <h2>Please use Alipay, WeChat, etc. to scan the following QR code for payment:</h2>
     <img src="${cp}/img/qr.jpg">
 
     <script>
         $(document).ready(function() {
             // 等待 3 秒后弹出确认框
             setTimeout(function() {
-                layer.confirm('前往订单状态？', {
+                layer.confirm('Go to order status?', {
                     icon: 1,
-                    title: '购买成功',
-                    btn: ['前往订单', '继续购买']
+                    title: 'The purchase was successful',
+                    btn: ['Go to Order', 'Continue Purchase']
                 }, function() {
                     // 点击“前往订单”按钮后执行的回调函数
                     window.location.href = "${cp}/shopping_record";
                 }, function(index) {
                     // 点击“继续购买”按钮后执行的回调函数
                     layer.close(index); // 关闭确认框
-                    layer.msg('继续购买', { icon: 1 }); // 弹出提示信息
+                    layer.msg('Continue Buying', { icon: 1 }); // 弹出提示信息
                 });
             }, 3000); // 3 秒后弹出确认框
         });

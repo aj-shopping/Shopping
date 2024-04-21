@@ -43,27 +43,27 @@
             <div class="col-sm-5 col-md-5 detail-x">
                 <table class="table table-striped">
                     <tr>
-                        <th>商品名称</th>
+                        <th>The title of the product</th>
                         <td>${productDetail.name}</td>
                     </tr>
                     <tr>
-                        <th>商品价格</th>
+                        <th>The price of the product</th>
                         <td>${productDetail.price}</td>
                     </tr>
                     <tr>
-                        <th>商品描述</th>
+                        <th>Product description</th>
                         <td>${productDetail.description}</td>
                     </tr>
                     <tr>
-                        <th>商品类别</th>
+                        <th>Product category</th>
                         <td>${productDetail.type}</td>
                     </tr>
                     <tr>
-                        <th>商品库存</th>
+                        <th>Product inventory</th>
                         <td>${productDetail.counts}</td>
                     </tr>
                     <tr>
-                        <th>购买数量</th>
+                        <th>Quantity purchased</th>
                         <td>
                             <div class="btn-group" role="group">
                                 <button type="button" class="btn btn-default" onclick="subCounts()">-</button>
@@ -75,9 +75,9 @@
                 </table>
                 <div class="row">
                     <div class="col-sm-1 col-md-1 col-lg-1"></div>
-                    <button class="btn btn-danger btn-lg col-sm-4 col-md-4 col-lg-4" onclick="addToShoppingCar(${productDetail.id})">添加购物车</button>
+                    <button class="btn btn-danger btn-lg col-sm-4 col-md-4 col-lg-4" onclick="addToShoppingCar(${productDetail.id})">Add to cart</button>
                     <div class="col-sm-2 col-md-2 col-lg-2"></div>
-                    <button  class="btn btn-danger btn-lg col-sm-4 col-md-4 col-lg-4" onclick="buyConfirm(${productDetail.id})">购买</button>
+                    <button  class="btn btn-danger btn-lg col-sm-4 col-md-4 col-lg-4" onclick="buyConfirm(${productDetail.id})">purchase</button>
 
                 </div>
             </div>
@@ -118,11 +118,11 @@
                   addResult = result.result;
               },
               error : function(result) {
-                  layer.alert('查询用户错误');
+                  layer.alert('Query User Error');
               }
           });
           if(addResult == "success") {
-              layer.confirm('前往购物车？', {icon: 1, title:'添加成功',btn:['前往购物车','继续浏览']},
+              layer.confirm('Go to cart?', {icon: 1, title:'Added successfully',btn:['Go to cart', 'Continue to browse']},
                       function(){
                           window.location.href = "${cp}/shopping_car";
                       },
@@ -165,38 +165,38 @@
                   '<div class="col-sm-10 col-md-10 col-lg-10">'+
                   '<table class="table confirm-margin">'+
                   '<tr>'+
-                  '<th>商品名称：</th>'+
+                  '<th>Product Name:</th>'+
                   '<td>'+product.name+'</td>'+
                   '</tr>'+
                   '<tr>'+
-                  '<th>商品单价：</th>'+
+                  '<th>Unit price of the product:</th>'+
                   '<td>'+product.price+'</td>'+
                   '</tr>'+
                   '<tr>'+
-                  '<th>购买数量：</th>'+
+                  '<th>Quantity:</th>'+
                   '<td>'+counts+'</td>'+
                   '</tr>'+
                   '<tr>'+
-                  '<th>总金额：</th>'+
+                  '<th>Total Amount:</th>'+
                   '<td>'+counts*product.price+'</td>'+
                   '</tr>'+
                   '<tr>'+
-                  '<th>收货地址：</th>'+
+                  '<th>Delivery address:</th>'+
                   '<td>'+address+'</td>'+
                   '</tr>'+
                   '<tr>'+
-                  '<th>联系电话：</th>'+
+                  '<th>Phone:</th>'+
                   '<td>'+phoneNumber+'</td>'+
                   '</tr>'+
                   '</table>'+
                   '<div class="row">'+
                   '<div class="col-sm-4 col-md-4 col-lg-4"></div>'+
-                  '<button class="btn btn-danger col-sm-4 col-md-4 col-lg-4" onclick="addToShoppingRecords('+productId+')">确认购买</button>'+
+                  '<button class="btn btn-danger col-sm-4 col-md-4 col-lg-4" onclick="addToShoppingRecords('+productId+')">Confirm your purchase</button>'+
                   '</div>'+
                   '</div>';
           layer.open({
               type:1,
-              title:'请确认订单信息：',
+              title:'Please confirm your order information:',
               content:html,
               area:['650px','350px'],
           });
@@ -216,7 +216,7 @@
                   productResult = result.result;
               },
               error : function(result) {
-                  layer.alert('查询错误');
+                  layer.alert('There was an error in the query');
               }
           });
           productResult = JSON.parse(productResult);
@@ -237,7 +237,7 @@
                   address = result.address;
               },
               error : function(result) {
-                  layer.alert('查询错误');
+                  layer.alert('There was an error in the query');
               }
           });
           return address;
@@ -257,7 +257,7 @@
                   phoneNumber = result.phoneNumber;
               },
               error : function(result) {
-                  layer.alert('查询错误');
+                  layer.alert('There was an error in the query');
               }
           });
           return phoneNumber;
@@ -281,12 +281,12 @@
                   buyResult = result.result;
               },
               error : function(result) {
-                  layer.alert('购买错误');
+                  layer.alert('There was an error with the purchase');
               }
           });
           window.location.href = "${cp}/payment";
           if(buyResult === "success") {
-              layer.confirm('前往订单状态？', {icon: 1, title:'购买成功',btn:['前往订单','继续购买']},
+              layer.confirm('Go to Order Status?', {icon: 1, title:'Purchase Successful',btn:['Go to Order','Continue Purchase']},
                       function(){
                           window.location.href = "${cp}/shopping_record";
                       },
@@ -295,7 +295,7 @@
               );
           }
           else if(buyResult === "unEnough"){
-              layer.alert("库存不足，购买失败")
+              layer.alert("Insufficient inventory and failed purchase")
           }
       }
 
@@ -319,7 +319,7 @@
                       '</div>'+
                       '<div class="col-sm-12 col-md-12 col-lg-12">'+
                       '<div class="col-sm-4 col-md-4 col-lg-4"></div>'+
-                      '<button class="btn btn-primary btn-lg evaluationButton col-sm-4 col-md-4 col-lg-4" onclick="addToEvaluation()">评价</button>'+
+                      '<button class="btn btn-primary btn-lg evaluationButton col-sm-4 col-md-4 col-lg-4" onclick="addToEvaluation()">appraise</button>'+
                       '</div>';
               inputArea.innerHTML +=html;
           }
@@ -341,7 +341,7 @@
                   results = result.result;
               },
               error : function(result) {
-                  layer.alert('查询错误');
+                  layer.alert('There was an error in the query');
               }
           });
           return results;
@@ -361,7 +361,7 @@
                   evaluations = result.result;
               },
               error : function(result) {
-                  layer.alert('查询错误');
+                  layer.alert('There was an error in the query');
               }
           });
           evaluations = eval("("+evaluations+")");
@@ -382,7 +382,7 @@
                   userResult = result.result;
               },
               error : function(result) {
-                  layer.alert('查询错误');
+                  layer.alert('There was an error in the query');
               }
           });
           userResult = JSON.parse(userResult);
@@ -406,11 +406,11 @@
                   addResult = result.result;
               },
               error : function(result) {
-                  layer.alert('查询用户错误');
+                  layer.alert('There was an error querying the user');
               }
           });
           if(addResult = "success"){
-              layer.msg("评价成功",{icon:1});
+              layer.msg("The evaluation was successful",{icon:1});
               window.location.href = "${cp}/product_detail";
           }
       }

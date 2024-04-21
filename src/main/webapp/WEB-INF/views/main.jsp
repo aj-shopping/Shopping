@@ -41,8 +41,8 @@
 			<!-- 控制内容 -->
 			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 				<div class="jumbotron">
-					<h1>欢迎来到购物+</h1>
-					<p>购物+是一个非常优秀的购物网站，你可以在这里买到物美价廉的东西，虽然它只是练习用的项目，哈哈哈哈</p>
+					<h1>Welcome to Shopping+</h1>
+					<p>Shopping+is a very excellent shopping website where you can buy good and affordable things, even though it is only a practical item.</p>
 				</div>
 
 				<div name="productArea1" class="row pd-10" id="productArea1">
@@ -79,13 +79,13 @@
 	  var loading = layer.load(0);
 
       var productType = new Array;
-      productType[1] = "衣服配饰";
-      productType[2] = "数码产品";
-      productType[3] = "书籍办公";
-      productType[4] = "游戏周边";
-      productType[5] = "生活用品";
-      productType[6] = "化妆用品";
-      productType[7] = "运动用品";
+      productType[1] = "Clothing & Accessories ";
+      productType[2] = "Digital Products";
+      productType[3] = "Books & Office Supplies";
+      productType[4] = "Gaming Accessories";
+      productType[5] = "Daily Necessities";
+      productType[6] = "Cosmetics";
+      productType[7] = "Sports Equipment";
 
 
 	  listProducts();
@@ -136,11 +136,11 @@
 					  allProducts = result.allProducts;
 				  }
 				  else{
-					  layer.alert('查询错误');
+					  layer.alert('There was an error in the query');
 				  }
 			  },
 			  error : function(resoult) {
-				  layer.alert('查询错误');
+				  layer.alert('There was an error in the query');
 			  }
 		  });
 		  //划重点划重点，这里的eval方法不同于prase方法，外面加括号
@@ -162,7 +162,7 @@
 				  jumpResult = result.result;
 			  },
 			  error : function(resoult) {
-				  layer.alert('查询错误');
+				  layer.alert('There was an error in the query');
 			  }
 		  });
 
