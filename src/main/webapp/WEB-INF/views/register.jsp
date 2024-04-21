@@ -26,7 +26,7 @@
 
     <!-- 中间内容 -->
     <div class="container-fluid">
-        <h1 class="title center">enroll</h1>
+        <h1 class="title center">Enroll</h1>
         <br/>
         <div class="col-sm-offset-2 col-md-offest-2">
             <!-- 表单输入 -->
@@ -119,27 +119,28 @@
                 user.sex = 1;
             if(user.userName == ''){
                 layer.msg('The username cannot be empty',{icon:2});
-                return;
+                //return;
+                return layer.close(loading);
             }
             else if(user.userName.length >= 12){
                 layer.msg('The username cannot exceed 12 characters in length',{icon:2});
-                return;
+                return layer.close(loading);
             }
             if(user.nickName == ''){
                 layer.msg('Nicknames cannot be empty',{icon:2});
-                return;
+                return layer.close(loading);
             }
             else if(user.nickName.length >= 15){
                 layer.msg('The username cannot exceed 15 characters in length',{icon:2});
-                return;
+                return layer.close(loading);
             }
             else if(user.password == ''){
                 layer.msg('The password cannot be empty',{icon:2});
-                return;
+                return layer.close(loading);
             }
             else if(user.password.length>= 20){
                 layer.msg('The password cannot exceed 20 characters in length',{icon:2});
-                return;
+                return layer.close(loading);
             }
             var registerResult = null;
             $.ajax({
