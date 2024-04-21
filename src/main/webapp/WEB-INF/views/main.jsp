@@ -8,7 +8,7 @@
 	  <meta charset="utf-8">
 	  <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	  <meta name="viewport" content="width=device-width, initial-scale=1">
-	  <title>购物+</title>
+	  <title>Shopping+</title>
 	  <link href="${cp}/css/bootstrap.min.css" rel="stylesheet">
 	  <link href="${cp}/css/style.css" rel="stylesheet">
 
@@ -42,7 +42,8 @@
 			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 				<div class="jumbotron">
 					<h1>Welcome to Shopping+</h1>
-					<p>Shopping+is a very excellent shopping website where you can buy good and affordable things, even though it is only a practical item.</p>
+					<p>
+"Shopping+ offers a diverse range of products including clothing, digital gadgets, books, gaming accessories, daily necessities, cosmetics, and sports equipment. With a commitment to convenience and quality, we provide a seamless shopping experience for all your needs. </p>
 				</div>
 
 				<div name="productArea1" class="row pd-10" id="productArea1">

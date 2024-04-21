@@ -8,7 +8,7 @@
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title>购物+</title>
+      <title>Shopping+</title>
       <link href="${cp}/css/bootstrap.min.css" rel="stylesheet">
       <link href="${cp}/css/style.css" rel="stylesheet">
 
@@ -38,19 +38,19 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="inputEmail" class="col-sm-2 col-md-2 control-label">mailbox/label>
+                    <label for="inputEmail" class="col-sm-2 col-md-2 control-label">Mailbox</label>
                     <div class="col-sm-6 col-md-6">
                         <input type="email" class="form-control" id="inputEmail" placeholder="Please enter the correct email address"/>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="inputNickname" class="col-sm-2 col-md-2 control-label">nickname</label>
+                    <label for="inputNickname" class="col-sm-2 col-md-2 control-label">Nickname</label>
                     <div class="col-sm-6 col-md-6">
                         <input type="text" class="form-control" id="inputNickname" placeholder="GaoShuaiFu" />
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="inputPassword" class="col-sm-2 col-md-2 control-label">password</label>
+                    <label for="inputPassword" class="col-sm-2 col-md-2 control-label">Password</label>
                     <div class="col-sm-6 col-md-6">
                         <input type="password" class="form-control" id="inputPassword" placeholder="It is forbidden to enter illegal characters" />
                     </div>
@@ -62,7 +62,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="man" class="col-sm-2 col-md-2 control-label">gender</label>
+                    <label for="man" class="col-sm-2 col-md-2 control-label">Gender</label>
                     <div class="col-sm-6 col-md-6">
                         <label class="radio-inline">
                             <input type="radio" id="man" value="option1"> Male
@@ -79,20 +79,20 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="postcodes" class="col-sm-2 col-md-2 control-label">Zip code</label>
+                    <label for="postcodes" class="col-sm-2 col-md-2 control-label">Postal code</label>
                     <div class="col-sm-6 col-md-6">
-                        <input type="text" class="form-control" id="postcodes" placeholder="Please enter your zip code" />
+                        <input type="text" class="form-control" id="postcodes" placeholder="Please enter your postal code" />
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="address" class="col-sm-2 col-md-2 control-label">address</label>
+                    <label for="address" class="col-sm-2 col-md-2 control-label">Address</label>
                     <div class="col-sm-6 col-md-6">
                         <input type="text" class="form-control" id="address" placeholder="Please enter a shipping address" />
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-6">
-                        <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="startRegister()">enroll</button>
+                        <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="startRegister()">Enroll</button>
                     </div>
                 </div>
             </div>
