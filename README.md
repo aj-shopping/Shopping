@@ -14,7 +14,7 @@
 
 ```shell script
 # 1.执行下面命令将代码下载到本地（需安装git客户端，如果没有安装则在此页面选择Download as zip 方式下载到本地）
-git clone https://github.com/IcedSoul/Shopping.git
+git clone [https://github.com/IcedSoul/Shopping.git](https://github.com/aj-shopping/Shopping.git)
 
 # 2.运行项目（使用远程镜像,如果失败不要紧，执行docker-compose down 然后重新docker-compose up即可。）
 cd ./Shopping 
@@ -74,4 +74,4 @@ docker-compose up -d
 ![控制台](https://xiaofengguo.oss-cn-hangzhou.aliyuncs.com/shoping-main.png)
 
 ## 演示地址
-http://119.23.212.211:8080/Shopping
+[http://119.23.212.211:8080/Shopping](http://118.31.251.111:8080/Shopping/)
