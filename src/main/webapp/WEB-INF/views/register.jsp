@@ -65,10 +65,10 @@
                     <label for="man" class="col-sm-2 col-md-2 control-label">Gender</label>
                     <div class="col-sm-6 col-md-6">
                         <label class="radio-inline">
-                            <input type="radio" id="man" value="option1"> Male
+                            <input type="radio" id="man" value="option1" name="sex"> Male
                         </label>
                         <label class="radio-inline">
-                            <input type="radio" id="woman" value="option2"> Female
+                            <input type="radio" id="woman" value="option2" name="sex" checked> Female
                         </label>
                     </div>
                 </div>
