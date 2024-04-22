@@ -64,14 +64,6 @@ docker-compose up -d
     - 处理订单功能
     - 发货功能
 
-## 运行截图
-
-![主页](https://xiaofengguo.oss-cn-hangzhou.aliyuncs.com/shoping-main.png)
-![商品详情页](https://xiaofengguo.oss-cn-hangzhou.aliyuncs.com/shopping-detail.png)
-![购物车](https://xiaofengguo.oss-cn-hangzhou.aliyuncs.com/shoping-car.png)
-![订单页](https://xiaofengguo.oss-cn-hangzhou.aliyuncs.com/shoping-order.png)
-![订单处理页](https://xiaofengguo.oss-cn-hangzhou.aliyuncs.com/shopping-handle.png)
-![控制台](https://xiaofengguo.oss-cn-hangzhou.aliyuncs.com/shoping-main.png)
 
 ## 演示地址
 [http://119.23.212.211:8080/Shopping](http://118.31.251.111:8080/Shopping/)
