@@ -174,8 +174,9 @@ public class UserController {
 
     @RequestMapping(value = "/doLogout")
     public String doLogout(HttpSession httpSession){
-        httpSession.setAttribute("currentUser","");
-        return "redirect:login";
+        httpSession.invalidate();
+        //httpSession.setAttribute("currentUser","");
+        return "redirect:main";
     }
 
     @RequestMapping(value = "/getUserById", method = RequestMethod.POST)

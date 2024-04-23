@@ -75,10 +75,10 @@
                 </table>
                 <div class="row">
                     <div class="col-sm-1 col-md-1 col-lg-1"></div>
-                    <button class="btn btn-danger btn-lg col-sm-4 col-md-4 col-lg-4" onclick="addToShoppingCar(${productDetail.id})">Add to cart</button>
+                    <div class="col-sm-2 col-md-2 col-lg-2"></div>
+                     <button class="btn btn-danger btn-lg col-sm-4 col-md-4 col-lg-4" onclick="addToShoppingCar(${productDetail.id})">Add to cart</button>
                     <div class="col-sm-2 col-md-2 col-lg-2"></div>
                     <button  class="btn btn-danger btn-lg col-sm-4 col-md-4 col-lg-4" onclick="buyConfirm(${productDetail.id})">purchase</button>
-
                 </div>
             </div>
         </div>
@@ -101,6 +101,7 @@
 
       function addToShoppingCar(productId) {
           judgeIsLogin();
+
           var productCounts = document.getElementById("productCounts");
           var counts = parseInt(productCounts.innerHTML);
           var shoppingCar = {};
@@ -133,9 +134,12 @@
       }
 
       function judgeIsLogin() {
-          if("${currentUser.id}" == null || "${currentUser.id}" === undefined || "${currentUser.id}" ===""){
+          if ("${currentUser.id}" === "" || "${currentUser.id}" === undefined) {
               window.location.href = "${cp}/login";
+              //alert("Please log in first");
+
           }
+
       }
 
       function subCounts() {

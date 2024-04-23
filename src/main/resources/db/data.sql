@@ -18,7 +18,7 @@ INSERT INTO shopping.products (id, name, description, key_word, price, counts, u
 INSERT INTO shopping.products (id, name, description, key_word, price, counts, url, type) VALUES (17, 'ceramic cup', 'ceramic cup', 'ceramic cup', 50, 9999, 'ti7vx-lzk3e', 5);
 INSERT INTO shopping.products (id, name, description, key_word, price, counts, url, type) VALUES (18, 'lipstick', 'lipstick', 'lipstick', 399, 9999, 'tmcf5-xzrzz', 6);
 INSERT INTO shopping.products (id, name, description, key_word, price, counts, url, type) VALUES (19, 'table tennis bats', 'table tennis bats', 'table tennis，bats', 30, 1000, 'tkmjp-2ukoy', 7);
-INSERT INTO shopping.products (id, name, description, key_word, price, counts, url, type) VALUES (20, 'XIAOMI SU7', 'XIAOMI SU7', 'XIAOMI SU7', 299999, 1, 't0hg1-n1k9t', 7);
+INSERT INTO shopping.products (id, name, description, key_word, price, counts, url, type) VALUES (20, 'XIAOMI SU7', 'XIAOMI SU7', 'XIAOMI SU7', 299999, 1, 'trq2d-q5sa1', 7);
 
 INSERT INTO `user_main`(`id`, `name`, `email`, `nick_name`, `role`) VALUES (1, 'admin', 'admin@abc.com', 'admin', 1);
 INSERT INTO `user_main`(`id`, `name`, `email`, `nick_name`, `role`) VALUES (2, 'user1', 'user1@abc.com', 'user1', 0);
