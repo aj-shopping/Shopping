@@ -33,6 +33,13 @@ create table if not exists user_detail(
 	foreign key(id) references user_main(id)
 );
 
+CREATE TABLE if not exists message (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    sender VARCHAR(255),
+    text TEXT,
+    times DATETIME,
+    receiver VARCHAR(255)
+);
 
 create table if not exists products(
 	id int not null,

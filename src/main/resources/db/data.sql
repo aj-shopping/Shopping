@@ -25,3 +25,9 @@ INSERT INTO `user_main`(`id`, `name`, `email`, `nick_name`, `role`) VALUES (2, '
 
 INSERT INTO `user_detail`(`id`, `password`, `phone_number`, `sex`, `birthday`, `post_number`, `address`, `register_time`) VALUES (1, 'admin', '12345677654', 0, '2000/01/01', '000000', '地球', '2020-01-01 00:00:00');
 INSERT INTO `user_detail`(`id`, `password`, `phone_number`, `sex`, `birthday`, `post_number`, `address`, `register_time`) VALUES (2, '123', '11111111111', 0, '2000/01/01', '000000', '地球', '2020-01-01 00:00:00');
+
+
+
+INSERT INTO message (sender, text, times, receiver) VALUES ('admin', 'Hello, how are you?', '2024-05-17 10:00:00', 'user1');
+INSERT INTO message (sender, text, times, receiver) VALUES ('user1', 'Hi Alice, I am doing well, thank you!', '2024-05-17 10:05:00', 'admin');
+INSERT INTO message (sender, text, times, receiver) VALUES ('admin', 'That is great to hear!', '2024-05-17 10:10:00', 'user1');
