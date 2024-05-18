@@ -469,7 +469,7 @@
     function sendMessageToBackend(message) {
         var sender = "${currentUser.nickName}";
         var text = message;
-        var receiver = sender === "admin" ? "left" : "admin"
+        var receiver = "admin" ;
         $.ajax({
             type: "POST", // 使用 POST 方法发送消息
             url: "/Shopping/sendMessage", // 后端提供的接收消息的 URL
@@ -490,11 +490,13 @@
 
     function sendMessage() {
         var message = document.getElementById("messageInput").value;
+        //alert(message);
         // 发送消息到后端的逻辑
         sendMessageToBackend(message);
+        //alert("send message");
         // 这里可以使用 AJAX 或其他方法将消息发送到后端
         // 发送成功后，将消息显示在聊天窗口中
-        displayMessage("user", message);
+        displayMessage("${currentUser.nickName}", message);
         // 清空输入框
         document.getElementById("messageInput").value = "";
     }
@@ -505,7 +507,7 @@
         var inputArea = document.getElementById("chatbody")
         var messageHtml = '<div class="answer ' +position+ '">'+
                     '<div class="avatar">'+
-                    '<img src="'+avatar+'" alt="'+username+'">'+
+                    '<img src="'+img+'" alt="'+username+'">'+
                     '<div class="status offline"></div>'+
                     '</div>'+
                     '<div class="name">'+username+'</div>'+
@@ -560,7 +562,7 @@
                     '</div>';
             inputArea.innerHTML += messageHtml;
         }
-        scrollChatToBottom();
+
     }
 
 

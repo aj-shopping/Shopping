@@ -72,6 +72,28 @@ public class MessageDaoImplement implements MessageDao{
 
     @Override
     public void addMessage(Message message) {
-        sessionFactory.getCurrentSession().save(message);
+        Connection conn;
+
+        try {
+            conn = DriverManager.getConnection(
+                    "jdbc:mysql://118.31.251.111:32778",
+                    "root",
+                    "root"
+            );
+        } catch (SQLException e) {
+            return ;
+        }
+        String sql ="INSERT INTO shopping.message (sender, text, times, receiver) VALUES (?, ?, ?, ?);" ;
+        PreparedStatement ps ;
+        try {
+            ps = conn.prepareStatement(sql);
+        	ps.setString(1, message.getSender());
+            ps.setString(2, message.getText());
+            ps.setString(3,String.valueOf(message.getTimes()));
+            ps.setString(4,message.getReceiver());
+            ps.executeUpdate();
+        } catch (SQLException e) {
+
+        }
     }
 }
