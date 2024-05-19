@@ -30,8 +30,8 @@
 
     <h2>Choose your payment method:</h2>
      <div class="box1">
-         <div><img src="${cp}/img/支付宝.png"><a href="wechat.jsp"></a></div>
-         <div><img src="${cp}/img/微信支付.png"><a href="Alipay.jsp"></a></div>
+         <div><a href="wechat.jsp"><img src="${cp}/img/支付宝.png"></a></div>
+         <div><a href="Alipay.jsp"><img src="${cp}/img/微信支付.png"></a></div>
 
      </div>
 </body>
