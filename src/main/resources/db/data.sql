@@ -1,4 +1,4 @@
-
+DELETE FROM message;
 INSERT INTO shopping.products (id, name, description, key_word, price, counts, url, type) VALUES (1, 'skinny suit in grey', 'skinny suit in grey', 'suit;', 499, 2000, 'suit1(1)', 1);
 INSERT INTO shopping.products (id, name, description, key_word, price, counts, url, type) VALUES (2, 'Pure Cotton T-Shirt in White', 'Pure Cotton T-Shirt in White', 'pure cotton;t-shirt;', 59, 3999, 'T恤1(1)', 1);
 INSERT INTO shopping.products (id, name, description, key_word, price, counts, url, type) VALUES (3, 'jeans in blue', 'jeans in blue', 'jeans;', 189, 4000, '牛仔裤(1)', 1);
@@ -28,6 +28,6 @@ INSERT INTO `user_detail`(`id`, `password`, `phone_number`, `sex`, `birthday`, `
 
 
 
-INSERT INTO message (sender, text, times, receiver) VALUES ('admin', 'Hello, how are you?', '2024-05-17 10:00:00', 'user1');
-INSERT INTO message (sender, text, times, receiver) VALUES ('user1', 'Hi Alice, I am doing well, thank you!', '2024-05-17 10:05:00', 'admin');
-INSERT INTO message (sender, text, times, receiver) VALUES ('admin', 'That is great to hear!', '2024-05-17 10:10:00', 'user1');
+INSERT INTO message (id, sender, text, times, receiver) VALUES (1, 'admin', 'Hello, how are you?', '2024-05-19T04:23:13.532', 'user1');
+INSERT INTO message (id, sender, text, times, receiver) VALUES (2, 'user1', 'Hi Alice, I am doing well, thank you!', '2024-05-19T04:23:14.123', 'admin');
+INSERT INTO message (id, sender, text, times, receiver) VALUES (3, 'admin', 'That is great to hear!', '2024-05-19T04:23:16.139', 'user1');

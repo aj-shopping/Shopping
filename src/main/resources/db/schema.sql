@@ -8,6 +8,7 @@ drop table if exists evaluation;
 drop table if exists user_detail;
 drop table if exists user_main;
 drop table if exists products;
+drop table if exists messages;
 
 create table if not exists user_main(
 	id int not null,
@@ -33,12 +34,13 @@ create table if not exists user_detail(
 	foreign key(id) references user_main(id)
 );
 
-CREATE TABLE if not exists message (
-    id BIGINT AUTO_INCREMENT PRIMARY KEY,
-    sender VARCHAR(255),
-    text TEXT,
-    times DATETIME,
-    receiver VARCHAR(255)
+create table if not exists message
+(
+    id   int auto_increment not null primary key,
+    receiver varchar(255) null,
+    sender   varchar(255) null,
+    text     varchar(255) null,
+    times    varchar(20)    null
 );
 
 create table if not exists products(

@@ -22,7 +22,7 @@ public class MessageDaoImplement implements MessageDao{
 
 
     @Override
-    public List<Message> getMessage(String receiver) {
+    public List<Message> getMessage(String receiver) throws SQLException {
 
 //        String hql = "from Message where receiver = ? ";
 //        Query query = sessionFactory.getCurrentSession().createQuery(hql);
@@ -37,7 +37,7 @@ public class MessageDaoImplement implements MessageDao{
 
         try {
             conn = DriverManager.getConnection(
-                    "jdbc:mysql://118.31.251.111:32778",
+                    "jdbc:mysql://118.31.251.111:32780",
                     "root",
                     "root"
             );
@@ -56,7 +56,7 @@ public class MessageDaoImplement implements MessageDao{
                 Long id = rs.getLong("id");
                 String sender = rs.getString("sender");
                 String text = rs.getString("text");
-                LocalDateTime times = rs.getTimestamp("times").toLocalDateTime();
+                String times = rs.getString("times");
                 String receive = rs.getString("receiver");
                 Message reservation = new Message(id, sender, text, times, receive);
                 messages.add(reservation);
@@ -64,6 +64,7 @@ public class MessageDaoImplement implements MessageDao{
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+        conn.close();
         //System.out.println(reservations);
         return messages;
 
@@ -71,12 +72,12 @@ public class MessageDaoImplement implements MessageDao{
     }
 
     @Override
-    public void addMessage(Message message) {
+    public void addMessage(Message message) throws SQLException {
         Connection conn;
 
         try {
             conn = DriverManager.getConnection(
-                    "jdbc:mysql://118.31.251.111:32778",
+                    "jdbc:mysql://118.31.251.111:32780",
                     "root",
                     "root"
             );
@@ -95,5 +96,6 @@ public class MessageDaoImplement implements MessageDao{
         } catch (SQLException e) {
 
         }
+        conn.close();
     }
 }

@@ -310,13 +310,19 @@
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-                <li onclick="toggleChatSidebar();"><a>Customer Service</a></li>
+
+
                 <c:if test="${empty currentUser}">
+                    <li onclick="toggleChatSidebar();"><a>Customer Service</a></li>
                     <li><a href="${cp}/register" methods="post">Register</a></li>
                     <li><a href="${cp}/login" methods="post">Log in</a></li>
                 </c:if>
                 <c:if test="${not empty currentUser}">
+                    <c:if test="${currentUser.role == 0}">
+                        <li onclick="toggleChatSidebar();"><a>Customer Service</a></li>
+                    </c:if>
                     <c:if test="${currentUser.role == 1}">
+                        <li onclick="toAnswer();"><a href="${cp}/answer">Answer</a></li>
                         <li><a href="${cp}/control" methods="post">Control Panel</a></li>
                     </c:if>
                     <li class="dropdown">
@@ -355,6 +361,7 @@
             <a>Please log in first!</a>
         </c:if>
          <c:if test="${not empty currentUser}">
+
              <c:if test="${currentUser.role == 0}">
                 <div class="content container">
                     <div class="row row-broken">
@@ -441,6 +448,8 @@
         var sidebar = document.getElementById("chatSidebar");
         sidebar.classList.toggle("sidebar-show");
     }
+
+
 
     function searchProduct() {
         var search = {};
@@ -568,7 +577,10 @@
 
     // 页面加载完成后开始接收消息
     $(document).ready(function() {
-        receiveMessages();
+        if(${currentUser.role == 0}){
+            receiveMessages();
+        }
+
     });
 
     function scrollChatToBottom() {

@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name="message")
 public class Message {
-    public Message(Long id, String sender, String text, LocalDateTime times, String receiver) {
+    public Message(Long id, String sender, String text, String times, String receiver) {
         this.id = id;
         this.sender = sender;
         this.text = text;
@@ -24,7 +24,7 @@ public class Message {
 
     private String text;
 
-    private LocalDateTime times;
+    private String times;
 
     private String receiver;
 
@@ -34,11 +34,11 @@ public class Message {
 
 
     @Column(name="times")
-    public LocalDateTime getTimes() {
+    public String getTimes() {
         return times;
     }
 
-    public void setTimes(LocalDateTime times) {
+    public void setTimes(String times) {
         this.times = times;
     }
 
