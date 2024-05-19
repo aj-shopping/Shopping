@@ -1,10 +1,15 @@
 package com.shopping.service;
 
 import com.shopping.dao.ShoppingRecordDao;
+import com.shopping.dao.UserDao;
+import com.shopping.dao.UserDetailDao;
 import com.shopping.entity.ShoppingRecord;
+import com.shopping.entity.User;
+import com.shopping.entity.UserDetail;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 
@@ -12,6 +17,9 @@ import java.util.List;
 public class ShoppingRecordServiceImplement implements ShoppingRecordService {
     @Autowired
     private ShoppingRecordDao shoppingRecordDao;
+    @Autowired
+    private UserDetailDao userDetailDao;
+
     @Override
     public ShoppingRecord getShoppingRecord(int userId, int productId,String time) {
         return shoppingRecordDao.getShoppingRecord(userId,productId,time);
@@ -39,7 +47,13 @@ public class ShoppingRecordServiceImplement implements ShoppingRecordService {
 
     @Override
     public List<ShoppingRecord> getShoppingRecords(int userId) {
-        return shoppingRecordDao.getShoppingRecords(userId);
+        List<ShoppingRecord> shoppingRecords=shoppingRecordDao.getShoppingRecords(userId);
+        UserDetail userDetail=userDetailDao.getUserDetail(userId);
+        for (ShoppingRecord shoppingRecord : shoppingRecords) {
+            String address=userDetail.getAddress();
+            shoppingRecord.setAddress(address);
+        }
+        return shoppingRecords;
     }
 
     @Override

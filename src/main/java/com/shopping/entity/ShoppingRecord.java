@@ -13,6 +13,8 @@ public class ShoppingRecord {
     private int orderStatus;
     private int productPrice;
     private int counts;
+    private String address;
+
 
     @Id
     @Column(name="user_id")
@@ -69,6 +71,15 @@ public class ShoppingRecord {
 
     public void setCounts(int counts) {
         this.counts = counts;
+    }
+
+    @Transient
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 
 

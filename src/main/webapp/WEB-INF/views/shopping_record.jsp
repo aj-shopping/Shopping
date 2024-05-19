@@ -100,6 +100,7 @@
                 '<th>The title of the product</th>'+
                 '<th>Quantity purchased</th>'+
                 '<th>The amount of the payment</th>'+
+                '<th>Adress</th>'+
                 '<th>Order status</th>'+
                 '</tr>';
         var transportHTML = '<tr>'+
@@ -122,6 +123,7 @@
                 '<th>The title of the product</th>'+
                 '<th>Quantity purchased</th>'+
                 '<th>The amount of the payment</th>'+
+                '<th>Address</th>'+
                 '<th>Order status</th>'+
                 '</tr>';
         var unHandleHTMLTemp = "";
@@ -135,6 +137,7 @@
                     '<td>'+product.name+'</td>'+
                     '<td>'+allShoppingRecords[i].counts+'</td>'+
                     '<td>'+allShoppingRecords[i].productPrice+'</td>'+
+                    '<td>'+allShoppingRecords[i].address+'</td>'+
                     '<td>'+orderArray[allShoppingRecords[i].orderStatus]+'</td>'+
                     '</tr>';
             allCounts++;
@@ -143,6 +146,7 @@
                         '<td>'+product.name+'</td>'+
                         '<td>'+allShoppingRecords[i].counts+'</td>'+
                         '<td>'+allShoppingRecords[i].productPrice+'</td>'+
+                        '<td>'+allShoppingRecords[i].address+'</td>'+
                         '<td>'+orderArray[allShoppingRecords[i].orderStatus]+'</td>'+
                         '</tr>';
                 unHandleCounts++;
