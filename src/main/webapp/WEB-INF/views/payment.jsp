@@ -15,38 +15,24 @@
     <script src="${cp}/js/jquery.min.js" type="text/javascript"></script>
     <script src="${cp}/js/bootstrap.min.js" type="text/javascript"></script>
     <script src="${cp}/js/layer.js" type="text/javascript"></script>
+    <style>
+        .box1{
+            float: left;
+            height: 300px;
+        }
+    </style>
 
 
     <title>QR code payment</title>
 </head>
 <body>
-    <h1>QR code payment</h1>
+    <h1 style="align-content: center">QR code payment</h1>
 
+    <h2>Choose your payment method:</h2>
+     <div class="box1">
+         <div><img src="${cp}/img/支付宝.png"><a href="wechat.jsp"></a></div>
+         <div><img src="${cp}/img/微信支付.png"><a href="Alipay.jsp"></a></div>
 
-    <h2>Please use Alipay, WeChat, etc. to scan the following QR code for payment:</h2>
-    <img src="${cp}/img/qr.jpg">
-
-    <script>
-        $(document).ready(function() {
-            // 等待 3 秒后弹出确认框
-            setTimeout(function() {
-                layer.confirm('Go to order status?', {
-                    icon: 1,
-                    title: 'The purchase was successful',
-                    btn: ['Go to Order', 'Continue Purchase']
-                }, function() {
-                    // 点击“前往订单”按钮后执行的回调函数
-                    window.location.href = "${cp}/shopping_record";
-                }, function(index) {
-                    // 点击“继续购买”按钮后执行的回调函数
-                    layer.close(index); // 关闭确认框
-                    layer.msg('Continue Buying', { icon: 1 }); // 弹出提示信息
-                });
-            }, 3000); // 3 秒后弹出确认框
-        });
-    </script>
-
-
-
+     </div>
 </body>
 </html>
