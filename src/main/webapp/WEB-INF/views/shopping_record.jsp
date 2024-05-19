@@ -100,7 +100,7 @@
                 '<th>The title of the product</th>'+
                 '<th>Quantity purchased</th>'+
                 '<th>The amount of the payment</th>'+
-                '<th>Adress</th>'+
+                '<th>Address</th>'+
                 '<th>Order status</th>'+
                 '</tr>';
         var transportHTML = '<tr>'+
