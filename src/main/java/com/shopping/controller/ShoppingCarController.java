@@ -31,6 +31,16 @@ public class ShoppingCarController {
     return "payment"; 
     }
 
+    @RequestMapping(value = "/Alipay")
+    public String alipay() {
+    return "Alipay";
+    }
+
+    @RequestMapping(value = "/wechat")
+    public String wechat() {
+    return "wechat";
+    }
+
     @RequestMapping(value = "/addShoppingCar",method = RequestMethod.POST)
     @ResponseBody
     public Map<String,Object> addShoppingCar(int userId,int productId,int counts){
