@@ -35,6 +35,7 @@
                 window.location.href = "${cp}/shopping_record";
             }, function(index) {
                 // 点击“继续购买”按钮后执行的回调函数
+                window.location.href = "${cp}/main";
                 layer.close(index); // 关闭确认框
                 layer.msg('Continue Buying', { icon: 1 }); // 弹出提示信息
             });
