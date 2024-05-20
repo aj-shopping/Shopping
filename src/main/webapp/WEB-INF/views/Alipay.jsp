@@ -46,6 +46,7 @@
                     // 点击“继续购买”按钮后执行的回调函数
                     layer.close(index); // 关闭确认框
                     layer.msg('Continue Buying', { icon: 1 }); // 弹出提示信息
+                    window.location.href = "${cp}/main";
                 });
             }, 3000); // 3 秒后弹出确认框
         });
