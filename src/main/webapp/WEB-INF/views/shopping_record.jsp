@@ -372,7 +372,63 @@
         }
     }
     function returnGood(productId,time){
-        layer.alert('return good')
+            judgeIsLogin();
+            var product = getProductById(productId);
+            var html = '<div class="col-sm-1 col-md-1 col-lg-1"></div>' +
+                       '<div class="col-sm-10 col-md-10 col-lg-10">' +
+                       '<table class="table confirm-margin">' +
+                       '<tr>' +
+                       '<th>Product Name:</th>' +
+                       '<td>' + product.name + '</td>' +
+                       '</tr>' +
+                       '<tr>' +
+                       '<th>Unit price of the product:</th>' +
+                       '<td>' + product.price + '</td>' +
+                       '</tr>' +
+                       '<tr>' +
+                       '<th>Time of Purchase:</th>' +
+                       '<td>' + time + '</td>' +
+                       '</tr>' +
+                       '</table>' +
+                       '<div class="row">';
+                       '<div class="col-sm-4 col-md-4 col-lg-4"></div>'+
+                       '<button class="btn btn-danger col-sm-4 col-md-4 col-lg-4" onclick="ReturnsConfirm('+productId+','+${currentUser.id}+',\''+time+'\')">confirm</button>'+
+                       '</div>'+
+                       '</div>';
+            layer.open({
+                      type:1,
+                      title:'Please confirm your returns information:',
+                      content:html,
+                      area:['650px','350px'],
+            });
+            layer.alert('return good')
+    }
+    function ReturnsConfirm(productId,userId,time){
+                var shoppingRecord = {};
+                shoppingRecord.userId = userId;
+                shoppingRecord.productId = productId;
+                shoppingRecord.time = time;
+                $.ajax({
+                    async : false, //设置同步
+                    type : 'POST',
+                    url : '${cp}/returnGood',
+                    data : shoppingRecord,
+                    dataType : 'json',
+                    success : function(result) {
+                        if(result==true)
+                        {
+                            layer.alert('Returns succeed');
+                        }
+                        else
+                        {
+                            layer.alert('Returns failed');
+                        }
+                    },
+
+                    error : function(result) {
+                        layer.alert('Returns failed');
+                    }
+                });
     }
 </script>
 </body>
