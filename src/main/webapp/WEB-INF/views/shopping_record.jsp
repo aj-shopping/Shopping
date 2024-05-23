@@ -76,6 +76,7 @@
         orderArray[0] = "Not shipped";
         orderArray[1] = "In Progress";
         orderArray[2] = "Received";
+        orderArray[3] = "Returned";
         var unHandleTable = document.getElementById("unHandleTable");
         var transportTable = document.getElementById("transportTable");
         var receiveTable = document.getElementById("receiveTable");
@@ -390,9 +391,9 @@
                        '<td>' + time + '</td>' +
                        '</tr>' +
                        '</table>' +
-                       '<div class="row">';
+                       '<div class="row">'+
                        '<div class="col-sm-4 col-md-4 col-lg-4"></div>'+
-                       '<button class="btn btn-danger col-sm-4 col-md-4 col-lg-4" onclick="ReturnsConfirm('+productId+','+${currentUser.id}+',\''+time+'\')">confirm</button>'+
+                       '<button class="btn btn-danger col-sm-4 col-md-4 col-lg-4" onclick="ReturnsConfirm('+ productId + ',' +${currentUser.id} + ',\''+time+'\')">confirm</button>'+
                        '</div>'+
                        '</div>';
             layer.open({
@@ -401,7 +402,7 @@
                       content:html,
                       area:['650px','350px'],
             });
-            layer.alert('return good')
+
     }
     function ReturnsConfirm(productId,userId,time){
                 var shoppingRecord = {};
@@ -429,6 +430,7 @@
                         layer.alert('Returns failed');
                     }
                 });
+                window.location.href = "${cp}/shopping_record";
     }
 </script>
 </body>
