@@ -65,4 +65,9 @@ public class ShoppingRecordServiceImplement implements ShoppingRecordService {
     public boolean getUserProductRecord(int userId,int productId) {
         return shoppingRecordDao.getUserProductRecord(userId,productId);
     }
+
+    @Override
+    public boolean returnGood(int userId, int productId, String time) {
+        return shoppingRecordDao.returnGood(userId,productId,time);
+    }
 }

@@ -1,6 +1,7 @@
 package com.shopping.controller;
 
 import com.alibaba.fastjson.JSONArray;
+import com.beust.jcommander.IVariableArity;
 import com.shopping.entity.Product;
 import com.shopping.entity.ShoppingRecord;
 import com.shopping.service.ProductService;
@@ -121,5 +122,14 @@ public class ShoppingRecordController {
         Map<String,Object> resultMap = new HashMap<String,Object>();
         resultMap.put("result",result);
         return resultMap;
+    }
+
+
+    @RequestMapping(value = "/returnGood",method = RequestMethod.POST)
+    @ResponseBody
+    public boolean returnGood(int userId,int productId,String time){
+        System.out.println("我接收了"+userId+" "+productId+" "+time+" ");
+        boolean ifReturn = shoppingRecordService.returnGood(userId,productId,time);
+        return ifReturn; //返回成功删除true
     }
 }

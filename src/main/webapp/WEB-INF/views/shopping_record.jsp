@@ -117,6 +117,7 @@
                 '<th>Quantity purchased</th>'+
                 '<th>The amount of the payment</th>'+
                 '<th>Order status</th>'+
+                '<th>Refund</th>'+
                 '<th>appraise</th>'+
                 '</tr>';
         var allHTML = '<tr>'+
@@ -173,6 +174,9 @@
                         '<td>'+allShoppingRecords[i].counts+'</td>'+
                         '<td>'+allShoppingRecords[i].productPrice+'</td>'+
                         '<td>'+orderArray[allShoppingRecords[i].orderStatus]+'</td>'+
+                        '<td>'+
+                        '<button class="btn btn-primary btn-sm" onclick="returnGood('+allShoppingRecords[i].productId+',\''+allShoppingRecords[i].time+'\')">refund</button>'+
+                        '</td>'+
                         '<td>'+
                         '<button class="btn btn-primary btn-sm" onclick="productDetail('+allShoppingRecords[i].productId+')">appraise</button>'+
                         '</td>'+
@@ -366,6 +370,9 @@
         if(jumpResult == "success"){
             window.location.href = "${cp}/product_detail";
         }
+    }
+    function returnGood(productId,time){
+        layer.alert('return good')
     }
 </script>
 </body>

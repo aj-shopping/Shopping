@@ -99,4 +99,11 @@ public class ShoppingRecordDaoImplement implements ShoppingRecordDao {
         query.setParameter(0, productId);
         return query.executeUpdate() > 0;
     }
+
+    @Override
+    public boolean returnGood(int userId, int productId, String time) {
+        String sql = "update shopping_record set order_status=3 where user_id="+userId+" and product_id="+productId+" and time='"+time+"'";
+        Query query = sessionFactory.getCurrentSession().createSQLQuery(sql);
+        return query.executeUpdate() > 0;
+    }
 }

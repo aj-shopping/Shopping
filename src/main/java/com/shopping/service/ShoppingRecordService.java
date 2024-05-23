@@ -21,4 +21,6 @@ public interface ShoppingRecordService {
     public List<ShoppingRecord> getAllShoppingRecords();
 
     public boolean getUserProductRecord(int userId,int productId);
+
+    boolean returnGood(int userId, int productId, String time);
 }

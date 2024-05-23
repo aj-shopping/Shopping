@@ -25,4 +25,6 @@ public interface ShoppingRecordDao {
     boolean deleteShoppingRecordByUser(int userId);
 
     boolean deleteShoppingRecordByProductId(int productId);
+
+    boolean returnGood(int userId, int productId, String time);
 }
