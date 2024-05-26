@@ -40,6 +40,7 @@
                     <li role="presentation" class="list-group-item-diy"><a href="#transport" aria-controls="transport" role="tab" data-toggle="tab">Orders in transit&nbsp;<span class="badge" id="transportCount">0</span></a></li>
                     <li role="presentation" class="list-group-item-diy"><a href="#receive" aria-controls="receive" role="tab" data-toggle="tab">The order received&nbsp;<span class="badge" id="receiveCount">0</span></a></li>
                     <li role="presentation" class="list-group-item-diy"><a href="#all" aria-controls="all" role="tab" data-toggle="tab">All orders&nbsp;<span class="badge" id="allCount">0</span></a></li>
+                    <li role="presentation" class="list-group-item-diy"><a href="#refund" aria-controls="refund" role="tab" data-toggle="tab">The order refunded&nbsp;<span class="badge" id="refundCount">0</span></a></li>
                 </ul>
 
                 <div class="tab-content">
@@ -59,6 +60,10 @@
                         <table class="table table-hover center" id="allTable">
                         </table>
                     </div>
+                    <div role="tabpanel" class="tab-pane" id="refund">
+                        <table class="table table-hover center" id="refundTable">
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
@@ -76,26 +81,31 @@
         orderArray[0] = "Not shipped";
         orderArray[1] = "In Progress";
         orderArray[2] = "Received";
-        orderArray[3] = "Returned";
+        orderArray[3] = "Refunded";
         var unHandleTable = document.getElementById("unHandleTable");
         var transportTable = document.getElementById("transportTable");
         var receiveTable = document.getElementById("receiveTable");
+        var refundTable=document.getElementById("refundTable");
         var allTable = document.getElementById("allTable");
 
         var unHandleCount = document.getElementById("unHandleCount");
         var transportCount = document.getElementById("transportCount");
         var receiveCount = document.getElementById("receiveCount");
         var allCount = document.getElementById("allCount");
+        var refundCount = document.getElementById("refundCount");
 
         var unHandleCounts = parseInt(unHandleCount.innerHTML);
         var transportCounts = parseInt(transportCount.innerHTML);
         var receiveCounts = parseInt(receiveCount.innerHTML);
         var allCounts = parseInt(allCount.innerHTML);
+        var refundCounts = parseInt(refundCount.innerHTML);
 
         var allShoppingRecords = getShoppingRecords();
         unHandleTable.innerHTML = "";
         transportTable.innerHTML = "";
         receiveTable.innerHTML = "";
+        refundTable.innerHTML = "";
+
         allTable.innerHTML = "";
         var unHandleHTML = '<tr>'+
                 '<th>The title of the product</th>'+
@@ -128,9 +138,19 @@
                 '<th>Address</th>'+
                 '<th>Order status</th>'+
                 '</tr>';
+        var refundHTML = '<tr>'+
+            '<th>Purchaser</th>'+
+            '<th>The title of the product</th>'+
+            '<th>Quantity purchased</th>'+
+            '<th>The amount of the payment</th>'+
+            '<th>Shipping address</th>'+
+            '<th>Contact number</th>'+
+            '<th>Order status</th>'+
+            '</tr>';
         var unHandleHTMLTemp = "";
         var transportHTMLTemp = "";
         var receiveHTMLTemp = "";
+        var refundHTMLTemp = "";
         var allHTMLTemp = "";
 
         for(var i=0;i<allShoppingRecords.length;i++){
@@ -184,6 +204,20 @@
                         '</tr>';
                 receiveCounts++;
             }
+            else if(allShoppingRecords[i].orderStatus ==3){
+                var address = getUserAddress(allShoppingRecords[i].userId);
+                var phoneNumber = getUserPhoneNumber(allShoppingRecords[i].userId)
+                refundHTMLTemp+= '<tr>'+
+                    '<td>'+'${currentUser.nickName}'+'</td>'+
+                    '<td>'+product.name+'</td>'+
+                    '<td>'+allShoppingRecords[i].counts+'</td>'+
+                    '<td>'+allShoppingRecords[i].productPrice+'</td>'+
+                    '<td>'+address+'</td>'+
+                    '<td>'+phoneNumber+'</td>'+
+                    '<td>'+orderArray[allShoppingRecords[i].orderStatus]+'</td>'+
+                    '</tr>';
+                refundCounts++;
+            }
         }
         if(unHandleHTMLTemp == ""){
             unHandleHTML='<div class="row">'+
@@ -225,16 +259,28 @@
         }
         else
             allHTML+=allHTMLTemp;
+        if(refundHTMLTemp == ""){
+            refundHTML = '<div class="row">'+
+                '<div class="col-sm-3 col-md-3 col-lg-3"></div> '+
+                '<div class="col-sm-6 col-md-6 col-lg-6">'+
+                '<h2>There are no related orders</h2>'+
+                '</div>'+
+                '</div>';
+        }
+        else
+            refundHTML+=refundHTMLTemp;
 
         unHandleCount.innerHTML = unHandleCounts;
         transportCount.innerHTML = transportCounts;
         receiveCount.innerHTML = receiveCounts;
         allCount.innerHTML = allCounts;
+        refundCount.innerHTML= refundCounts;
 
         unHandleTable.innerHTML += unHandleHTML;
         transportTable.innerHTML += transportHTML;
         receiveTable.innerHTML += receiveHTML;
         allTable.innerHTML += allHTML;
+        refundTable.innerHTML +=refundHTML;
         layer.close(loading);
     }
 
