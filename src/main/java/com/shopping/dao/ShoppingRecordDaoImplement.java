@@ -1,11 +1,13 @@
 package com.shopping.dao;
 
+import com.shopping.entity.Message;
 import com.shopping.entity.ShoppingRecord;
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Repository;
 
 import javax.annotation.Resource;
+import java.sql.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -54,15 +56,48 @@ public class ShoppingRecordDaoImplement implements ShoppingRecordDao {
         // 组合日期和随机数
         String ordernumber = dateString + String.format("%03d", randomNumber);
         String delivery_id = "SF" + ordernumber;
-        String hql = "update ShoppingReocrd set orderStatus=? where userId=? and productId=? and time=?";
-        String sql = "update shopping_record set order_status=" + shoppingRecord.getOrderStatus() + ",delivery_id=" + delivery_id + " where user_id=" + shoppingRecord.getUserId() + " and product_id=" + shoppingRecord.getProductId() + " and time='" + shoppingRecord.getTime() + "'";
+
+        shoppingRecord.setDelivery_id(delivery_id);
+
+        //String hql = "update ShoppingReocrd set orderStatus=? , delivery_id=? where userId=? and productId=? and time=?";
+        String sql1 = "update shopping_record set delivery_id='" + shoppingRecord.getDelivery_id() + "' where user_id=" + shoppingRecord.getUserId() + " and product_id=" + shoppingRecord.getProductId() + " and time='" + shoppingRecord.getTime() + "'";
+        String sql2 = "update shopping_record set order_status=" + shoppingRecord.getOrderStatus() + " where user_id=" + shoppingRecord.getUserId() + " and product_id=" + shoppingRecord.getProductId() + " and time='" + shoppingRecord.getTime() + "'";
 //        Query query = sessionFactory.getCurrentSession().createQuery(hql);
 //        query.setParameter(0,shoppingRecord.getOrderStatus());
-//        query.setParameter(1,shoppingRecord.getUserId());
-//        query.setParameter(2,shoppingRecord.getProductId());
-//        query.setParameter(3,shoppingRecord.getTime());
-        Query query = sessionFactory.getCurrentSession().createSQLQuery(sql);
-        return query.executeUpdate() > 0;
+//        query.setParameter(1,shoppingRecord.getDelivery_id());
+//        query.setParameter(2,shoppingRecord.getUserId());
+//        query.setParameter(3,shoppingRecord.getProductId());
+//        query.setParameter(4,shoppingRecord.getTime());
+        Query query1 = sessionFactory.getCurrentSession().createSQLQuery(sql1);
+        Query query2 = sessionFactory.getCurrentSession().createSQLQuery(sql2);
+//        Connection conn;
+//
+//        try {
+//            conn = DriverManager.getConnection(
+//                    "jdbc:mysql://118.31.251.111:32780",
+//                    "root",
+//                    "root"
+//            );
+//        } catch (SQLException e) {
+//            throw new RuntimeException(e);
+//        }
+//        String sql= "UPDATE order_status=?, dilivery_id=? FROM shopping.shoppingRecord where userId=? and productId=? and time=?";
+//        PreparedStatement ps ;
+//
+//        try {
+//            ps = conn.prepareStatement(sql);
+//            ps.setInt(1, shoppingRecord.getOrderStatus());
+//            ps.setString(2, shoppingRecord.getDelivery_id());
+//            ps.setInt(3, shoppingRecord.getUserId());
+//            ps.setInt(4, shoppingRecord.getProductId());
+//            ps.setString(5, shoppingRecord.getTime());
+//            ResultSet rs = ps.executeQuery();
+//
+//        } catch (SQLException e) {
+//            throw new RuntimeException(e);
+//        }
+//        conn.close();
+        return query1.executeUpdate() > 0&&query2.executeUpdate() > 0;
     }
 
     @Override
