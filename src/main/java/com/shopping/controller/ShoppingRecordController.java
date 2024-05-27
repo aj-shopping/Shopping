@@ -1,7 +1,6 @@
 package com.shopping.controller;
 
 import com.alibaba.fastjson.JSONArray;
-import com.beust.jcommander.IVariableArity;
 import com.shopping.entity.Product;
 import com.shopping.entity.ShoppingRecord;
 import com.shopping.service.ProductService;

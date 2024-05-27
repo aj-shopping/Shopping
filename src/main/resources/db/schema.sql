@@ -75,6 +75,7 @@ create table if not exists shopping_record(
 	order_status int not null,
 	product_price int not null,
 	counts int not null,
+    delivery_id varchar(20) not null,
 	primary key (user_id,product_id,time),
 	foreign key (user_id) references user_main(id),
 	foreign key (product_id) references products(id)

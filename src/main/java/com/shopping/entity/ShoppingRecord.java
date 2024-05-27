@@ -4,8 +4,8 @@ import javax.persistence.*;
 
 
 @Entity
-@Table(name="shopping_record")
-@IdClass(value=ShoppingRecordPriKey.class)
+@Table(name = "shopping_record")
+@IdClass(value = ShoppingRecordPriKey.class)
 public class ShoppingRecord {
     private int userId;
     private int productId;
@@ -14,10 +14,20 @@ public class ShoppingRecord {
     private int productPrice;
     private int counts;
     private String address;
-
+    private String delivery_id;
 
     @Id
-    @Column(name="user_id")
+    @Column(name = "delivery_id")
+    public String getDelivery_id() {
+        return delivery_id;
+    }
+
+    public void setDelivery_id(String delivery_id) {
+        this.delivery_id = delivery_id;
+    }
+
+    @Id
+    @Column(name = "user_id")
     public int getUserId() {
         return userId;
     }
@@ -27,7 +37,7 @@ public class ShoppingRecord {
     }
 
     @Id
-    @Column(name="product_id")
+    @Column(name = "product_id")
     public int getProductId() {
         return productId;
     }
@@ -37,7 +47,7 @@ public class ShoppingRecord {
     }
 
     @Id
-    @Column(name="time")
+    @Column(name = "time")
     public String getTime() {
         return time;
     }
@@ -46,7 +56,7 @@ public class ShoppingRecord {
         this.time = time;
     }
 
-    @Column(name="order_status")
+    @Column(name = "order_status")
     public int getOrderStatus() {
         return orderStatus;
     }
@@ -55,7 +65,7 @@ public class ShoppingRecord {
         this.orderStatus = orderStatus;
     }
 
-    @Column(name="product_price")
+    @Column(name = "product_price")
     public int getProductPrice() {
         return productPrice;
     }
@@ -64,7 +74,7 @@ public class ShoppingRecord {
         this.productPrice = productPrice;
     }
 
-    @Column(name="counts")
+    @Column(name = "counts")
     public int getCounts() {
         return counts;
     }
